@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org/DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="beihua.dao.UserDao">
+    <insert id="insertUser">
+        insert into user
+        values(id=#{id},name=#{name},wallet=#{wallet});
+    </insert>
+
+    <select id="selectUser" resultType="User">
+        select * from user where id=#{id}
+    </select>
+
+    <delete id="deleteUser">
+        delete from user where id=#{id};
+    </delete>
+
+    <update id="updateUser">
+        update user set name=#{name}, wallet=#{wallet}
+        where id=#{id}
+    </update>
+
+
+</mapper>

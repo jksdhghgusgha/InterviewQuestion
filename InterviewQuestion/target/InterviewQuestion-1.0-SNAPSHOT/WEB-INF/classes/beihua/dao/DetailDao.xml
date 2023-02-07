@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org/DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="beihua.dao.DetailDao">
+    <insert id="insertDetail">
+        insert into detail(userId,date,num)
+        values(#{id},#{date},#{numb})
+    </insert>
+
+    <select id="selectDetails" resultType="Detail">
+        select userId as id,date,num as numb from detail where userId=#{id}
+    </select>
+
+</mapper>
